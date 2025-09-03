@@ -6,13 +6,13 @@
 }
 
 :root {
-    --primary: #4361ee;
-    --secondary: #3a0ca3;
-    --accent: #7209b7;
+    --primary: #e2b8ee;
+    --secondary: #debacc;
+    --accent: #fabee5;
     --light: #f8f9fa;
     --dark: #212529;
     --gray: #6c757d;
-    --success: #4cc9f0;
+    --success: hsl(295, 56%, 83%);
     --sidebar-width: 250px;
     --sidebar-collapsed: 60px;
     --header-height: 70px;
@@ -88,16 +88,17 @@ header {
 #sidebar-toggle {
   display: none;
 }
+
 /* Sidebar */
 .sidebar {
     position: fixed;
-    top: 70px; /* below header */
+    top: var(--header-height);
     left: 0;
-    width: 250px;
-    height: calc(100vh - 70px); /* full height minus header */
-    background: #2c3e50;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height));
+    background: var(--primary);
     color: white;
-    padding-top: 10px; /* some spacing for top */
+    padding-top: 10px;
     transition: width 0.3s;
     overflow: hidden;
 }
@@ -113,13 +114,35 @@ header {
 .sidebar-menu li {
     display: flex;
     align-items: center;
-    padding: 15px 20px;
     transition: all 0.3s;
 }
 
+/* Make the <a> fill the menu item */
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+    padding: 15px 20px; /* align with toggle button */
+    width: 100%;
+    transition: background 0.3s;
+}
+
+/* Sidebar icons */
 .sidebar-menu li i {
-    margin-right: 15px;
-    min-width: 20px;
+    min-width: 20px; /* ensures icons align vertically */
+}
+
+/* Hover effect */
+.sidebar-menu li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Active item */
+.sidebar-menu li.active a {
+    background-color: rgba(0, 0, 0, 0.2);
+    font-weight: bold;
 }
 
 /* Toggle button inside sidebar */
@@ -129,7 +152,7 @@ header {
     align-items: center;
     width: 40px;
     height: 40px;
-    margin: 0 auto 20px auto; /* center horizontally, margin below */
+    margin: 10px 20px; /* match padding of menu items */
     background: var(--primary);
     border-radius: 50%;
     cursor: pointer;
@@ -140,7 +163,7 @@ header {
 
 /* Collapse sidebar */
 #sidebar-toggle:checked ~ .sidebar {
-    width: 60px;
+    width: var(--sidebar-collapsed);
 }
 
 /* Hide text when collapsed */
@@ -148,8 +171,7 @@ header {
     display: none;
 }
 
-/* Move hamburger to center when collapsed */
+/* Adjust toggle button when collapsed */
 #sidebar-toggle:checked ~ .sidebar .toggle-btn {
-    margin-left: 10px; /* optional, small adjustment if needed */
+    margin-left: 10px; /* optional small adjustment */
 }
-
