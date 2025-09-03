@@ -145,6 +145,11 @@ header {
     background-color: rgba(0, 0, 0, 0.2);
     font-weight: bold;
 }
+.menu-item.active a {
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+}
 
 /* Toggle button inside sidebar */
 .toggle-btn {
@@ -174,7 +179,7 @@ header {
 
 /* Adjust toggle button when collapsed */
 #sidebar-toggle:checked ~ .sidebar .toggle-btn {
-    margin-left: 10px; /* optional small adjustment */
+    margin-left: 10px; 
 }
 
 /* Default main content next to sidebar */
@@ -184,6 +189,17 @@ header {
     margin-left: var(--sidebar-width);
     margin-top: 20px;
     padding: 2rem;
+}
+
+
+.dashboard-header {
+    margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+    font-size: 2rem;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
 }
 
 /* Shift main content when sidebar collapsed */

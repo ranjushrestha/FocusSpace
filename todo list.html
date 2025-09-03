@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="todo list.css">
+  <title>FocusSpace</title>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <i class="fas fa-rocket"></i>
+      <span>FocusSpace</span>
+    </div>
+    <div class="auth-buttons">
+      <button class="btn btn-outline">Sign In</button>
+      <button class="btn btn-primary">Sign Up</button>
+    </div>
+  </header>
+
+  <!-- Sidebar Toggle Checkbox -->
+  <input type="checkbox" id="sidebar-toggle">
+
+  <aside class="sidebar">
+    <label for="sidebar-toggle" class="toggle-btn">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <ul class="sidebar-menu">
+      <li class="menu-item ">
+        <a href="index.html">
+          <i class="fas fa-home"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="menu-item active">
+        <a href="todo list.html">
+          <i class="fas fa-tasks"></i>
+          <span>Todo List</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="notes.html">
+          <i class="fas fa-sticky-note"></i>
+          <span>Notes</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="calendar.html">
+          <i class="fas fa-calendar"></i>
+          <span>Calendar</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="settings.html">
+          <i class="fas fa-cog"></i>
+          <span>Settings</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+    <div class="container">
+        <h1>Today</h1>
+        <p class="task-count">4 tasks</p>
+
+        <ul class="task-list">
+            <li class="task">
+                <input type="checkbox" id="task1">
+                <label for="task1">Watch tutorial about productivity</label>
+            </li>
+            <li class="task">
+                <input type="checkbox" id="task2">
+                <label for="task2">Set aside 5 minutes to review tasks</label>
+            </li>
+             <li class="task">
+                <input type="checkbox" id="task3">
+                <label for="task3">Complete CSS project</label>
+            </li>
+            <li class="task">
+                <input type="checkbox" id="task4">
+                <label for="task4">Workout for 1hour</label>
+            </li>
+        </ul>
+
+        <div class="add-task">
+            <input type="text" placeholder="Add a task...">
+            <button>Add</button>
+        </div>
+    </div>
+</body>
+</html>
