@@ -6,20 +6,21 @@
 }
 
 :root {
-    --primary: #e2b8ee;
-    --secondary: #debacc;
-    --accent: #fabee5;
-    --light: #f8f9fa;
-    --dark: #212529;
-    --gray: #6c757d;
-    --success: hsl(295, 56%, 83%);
+    --primary: #8c7ae6;       /* soft purple for main actions/buttons */
+    --secondary: #6c5ce7;     /* slightly deeper purple for hover & accents */
+    --accent: #a29bfe;        /* lighter purple for highlights/subtle elements */
+    --bg-color: #f8f8ff;      /* very soft off-white for page background */
+    --light: #ffffff;          /* white for cards and containers */
+    --dark: #2d3436;           /* dark gray for text */
+    --gray: #b2bec3;           /* neutral gray for secondary text and borders */
+    --success: #00b894;        /* green for success messages */
     --sidebar-width: 250px;
     --sidebar-collapsed: 60px;
     --header-height: 70px;
 }
 
 body {
-    background-color: #f5f7ff;
+    background-color: var(--bg-color);
     color: var(--dark);
     line-height: 1.6;
     padding-top: var(--header-height);
@@ -174,4 +175,233 @@ header {
 /* Adjust toggle button when collapsed */
 #sidebar-toggle:checked ~ .sidebar .toggle-btn {
     margin-left: 10px; /* optional small adjustment */
+}
+
+/* Default main content next to sidebar */
+.main-content {
+    flex: 1;
+    transition: margin-left 0.3s;
+    margin-left: var(--sidebar-width);
+    margin-top: 20px;
+    padding: 2rem;
+}
+
+/* Shift main content when sidebar collapsed */
+#sidebar-toggle:checked ~ .main-content {
+    margin-left: var(--sidebar-collapsed);
+}
+
+.widgets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.widget {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.widget-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.widget-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f0f5ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+}
+
+/* Focus Timer Widget */
+.timer-display {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 1.5rem 0;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Todo List Widget */
+.todo-list {
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.todo-check {
+    margin-right: 1rem;
+    width: 18px;
+    height: 18px;
+}
+
+.todo-text {
+    flex: 1;
+}
+
+/* Stats Widget */
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.stats-container {
+    margin: 1.5rem 0;
+}
+
+/* Motivation Widget */
+.motivation-content {
+    padding: 1rem 0;
+    font-style: italic;
+}
+
+.motivation-author {
+    margin-top: 0.5rem;
+    text-align: right;
+    font-weight: 600;
+}
+
+/* Notes Widget */
+.notes-container {
+    margin: 1rem 0;
+}
+
+.note-item {
+    padding: 0.8rem;
+    background: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.note-title {
+    font-weight: 600;
+}
+
+.note-date {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* Events Widget */
+.events-container {
+    margin: 1rem 0;
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-icon {
+    width: 40px;
+    height: 40px;
+    background: #f0f5ff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: var(--primary);
+}
+
+.event-title {
+    font-weight: 600;
+}
+
+.event-time {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .sidebar:target {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 1.2rem;
+        left: 1rem;
+        z-index: 110;
+        background: var(--primary);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    
+    .close-sidebar {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        color: var(--gray);
+        text-decoration: none;
+        z-index: 95;
+    }
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+    display: none;
 }

@@ -1,68 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <title>FocusSpace</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <title>FocusSpace</title>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <i class="fas fa-rocket"></i>
-            <span>FocusSpace</span>
-        </div>
-        <div class="auth-buttons">
-            <button class="btn btn-outline">Sign In</button>
-            <button class="btn btn-primary">Sign Up</button>
-        </div>
-    </header>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <i class="fas fa-rocket"></i>
+      <span>FocusSpace</span>
+    </div>
+    <div class="auth-buttons">
+      <button class="btn btn-outline">Sign In</button>
+      <button class="btn btn-primary">Sign Up</button>
+    </div>
+  </header>
 
-    <!-- Sidebar Toggle Checkbox -->
-<input type="checkbox" id="sidebar-toggle">
+  <!-- Sidebar Toggle Checkbox -->
+  <input type="checkbox" id="sidebar-toggle">
 
-<div class="sidebar">
+  <aside class="sidebar">
     <label for="sidebar-toggle" class="toggle-btn">
-        <i class="fas fa-bars"></i>
+      <i class="fas fa-bars"></i>
     </label>
 
     <ul class="sidebar-menu">
-        <li class="menu-item ">
-            <a href="dashboard.html">
-                <i class="fas fa-home"></i>
-                <span>Dashboard</span>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="todo.html">
-                <i class="fas fa-tasks"></i>
-                <span>Todo List</span>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="notes.html">
-                <i class="fas fa-sticky-note"></i>
-                <span>Notes</span>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="calendar.html">
-                <i class="fas fa-calendar"></i>
-                <span>Calendar</span>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="settings.html">
-                <i class="fas fa-cog"></i>
-                <span>Settings</span>
-            </a>
-        </li>
+      <li class="menu-item">
+        <a href="dashboard.html">
+          <i class="fas fa-home"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="todo.html">
+          <i class="fas fa-tasks"></i>
+          <span>Todo List</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="notes.html">
+          <i class="fas fa-sticky-note"></i>
+          <span>Notes</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="calendar.html">
+          <i class="fas fa-calendar"></i>
+          <span>Calendar</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="settings.html">
+          <i class="fas fa-cog"></i>
+          <span>Settings</span>
+        </a>
+      </li>
     </ul>
-</div>
+  </aside>
 
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="dashboard-header">
+      <h1>Welcome to Focus Space</h1>
+      <p>Your personal productivity dashboard</p>
+    </div>
 
+    <div class="widgets-grid">
+      <!-- Focus Timer Widget -->
+      <div class="widget">
+        <div class="widget-header">
+          <h3 class="widget-title">Focus Timer</h3>
+          <div class="widget-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+        </div>
+        <div class="timer-display">25:00</div>
+        <div class="timer-controls">
+          <button class="btn btn-primary">Start</button>
+          <button class="btn btn-outline">Reset</button>
+        </div>
+      </div>
+
+      <!-- Todo List Widget -->
+      <div class="widget">
+        <div class="widget-header">
+          <h3 class="widget-title">Today's Tasks</h3>
+          <div class="widget-icon">
+            <i class="fas fa-list"></i>
+          </div>
+        </div>
+        <ul class="todo-list">
+          <li class="todo-item">
+            <input type="checkbox" class="todo-check">
+            <span class="todo-text">Complete project proposal</span>
+          </li>
+          <li class="todo-item">
+            <input type="checkbox" class="todo-check">
+            <span class="todo-text">Review weekly goals</span>
+          </li>
+          <li class="todo-item">
+            <input type="checkbox" class="todo-check" checked>
+            <span class="todo-text">Schedule team meeting</span>
+          </li>
+          <li class="todo-item">
+            <input type="checkbox" class="todo-check">
+            <span class="todo-text">Prepare presentation slides</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Stats Widget -->
+      <div class="widget">
+        <div class="widget-header">
+          <h3 class="widget-title">Productivity Stats</h3>
+          <div class="widget-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+        </div>
+        <div class="stats-container">
+          <div class="stat-item">
+            <span>Focus Time:</span>
+            <strong>3h 25m</strong>
+          </div>
+          <div class="stat-item">
+            <span>Tasks Completed:</span>
+            <strong>12/18</strong>
+          </div>
+          <div class="stat-item">
+            <span>Current Streak:</span>
+            <strong>5 days</strong>
+          </div>
+          <div class="stat-item">
+            <span>Weekly Goal:</span>
+            <strong>75%</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Motivation Widget -->
+      <div class="widget">
+        <div class="widget-header">
+          <h3 class="widget-title">Daily Motivation</h3>
+          <div class="widget-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+        </div>
+        <div class="motivation-content">
+          "The future depends on what you do today."
+          <div class="motivation-author">- Mahatma Gandhi</div>
+        </div>
+      </div>
+
+      <!-- Recent Notes Widget -->
+      <div class="widget">
+        <div class="widget-header">
+          <h3 class="widget-title">Recent Notes</h3>
+          <div class="widget-icon">
+            <i class="fas fa-sticky-note"></i>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="note-item">
+            <div class="note-title">Project Ideas</div>
+            <div class="note-date">Updated 2 hours ago</div>
+          </div>
+          <div class="note-item">
+            <div class="note-title">Meeting Notes</div>
+            <div class="note-date">Updated yesterday</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming Events Widget -->
+      <div class="widget">
+        <div class="widget-header">
+          <h3 class="widget-title">Upcoming Events</h3>
+          <div class="widget-icon">
+            <i class="fas fa-calendar-day"></i>
+          </div>
+        </div>
+        <div class="events-container">
+          <div class="event-item">
+            <div class="event-icon">
+              <i class="fas fa-video"></i>
+            </div>
+            <div class="event-details">
+              <div class="event-title">Team Meeting</div>
+              <div class="event-time">10:00 AM - 11:00 AM</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="event-details">
+              <div class="event-title">Project Deadline</div>
+              <div class="event-time">Tomorrow</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
-
 </html>
