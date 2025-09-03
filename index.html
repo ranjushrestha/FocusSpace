@@ -3,10 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <title>FocusSpace</title>
 </head>
 <body>
-    
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-rocket"></i>
+            <span>FocusSpace</span>
+        </div>
+        <div class="auth-buttons">
+            <button class="btn btn-outline">Sign In</button>
+            <button class="btn btn-primary">Sign Up</button>
+        </div>
+    </header>
+
+    <!-- Sidebar Toggle Checkbox -->
+<input type="checkbox" id="sidebar-toggle">
+
+<div class="sidebar">
+    <label for="sidebar-toggle" class="toggle-btn">
+        <i class="fas fa-bars"></i>
+    </label>
+
+    <ul class="sidebar-menu">
+        <li class="menu-item active">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+        </li>
+        <li class="menu-item">
+            <i class="fas fa-tasks"></i>
+            <span>Todo List</span>
+        </li>
+        <li class="menu-item">
+            <i class="fas fa-sticky-note"></i>
+            <span>Notes</span>
+        </li>
+        <li class="menu-item">
+            <i class="fas fa-calendar"></i>
+            <span>Calendar</span>
+        </li>
+        <li class="menu-item">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+        </li>
+    </ul>
+</div>
+
+
 </body>
+
 </html>
