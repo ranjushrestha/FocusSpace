@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+  <link rel="stylesheet" href="Styles/styles.css">
+<link rel="stylesheet" href="Styles/settings.css">
+  <title>FocusSpace</title>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <i class="fas fa-rocket"></i>
+      <span>FocusSpace</span>
+    </div>
+    <div class="auth-buttons">
+      <button class="btn btn-outline">Sign In</button>
+      <button class="btn btn-primary">Sign Up</button>
+    </div>
+  </header>
+
+  <!-- Sidebar Toggle Checkbox -->
+  <input type="checkbox" id="sidebar-toggle">
+
+  <aside class="sidebar">
+    <label for="sidebar-toggle" class="toggle-btn">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <ul class="sidebar-menu">
+      <li class="menu-item ">
+        <a href="index.html">
+          <i class="fas fa-home"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="menu-item ">
+        <a href="todo list.html">
+          <i class="fas fa-tasks"></i>
+          <span>Todo List</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="notes.html">
+          <i class="fas fa-sticky-note"></i>
+          <span>Notes</span>
+        </a>
+      </li>
+     
+      <li class="menu-item active">
+        <a href="settings.html">
+          <i class="fas fa-cog"></i>
+          <span>Settings</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <div class="settings-container">
+    <h1>⚙️ Settings</h1>
+
+    <section>
+      <h2>General</h2>
+      <label>Username <input type="text" placeholder="Enter your name"></label>
+      <label><input type="checkbox"> Dark Mode</label>
+      <label>Theme Color 
+        <select>
+          <option>Purple</option>
+          <option>Blue</option>
+          <option>Green</option>
+        </select>
+      </label>
+    </section>
+
+    <section>
+      <h2>To-Do List</h2>
+      <label>Sort Order
+        <select>
+          <option>Newest First</option>
+          <option>Oldest First</option>
+          <option>By Priority</option>
+        </select>
+      </label>
+      <label><input type="checkbox"> Show Completed Tasks</label>
+      <label><input type="checkbox"> Task Notifications</label>
+    </section>
+
+    <section>
+      <h2>Notes</h2>
+      <label>Default Note Color 
+        <select>
+          <option>Personal</option>
+          <option>Work</option>
+          <option>Ideas</option>
+          <option>Pinned</option>
+        </select>
+      </label>
+      <label>View Mode 
+        <select>
+          <option>Grid</option>
+          <option>List</option>
+        </select>
+      </label>
+      <label><input type="checkbox"> Pin Important Notes</label>
+    </section>
+
+    <section>
+      <h2>Preferences</h2>
+      <label>Font Size 
+        <select>
+          <option>Small</option>
+          <option selected>Medium</option>
+          <option>Large</option>
+        </select>
+      </label>
+      <label>Language 
+        <select>
+          <option>English</option>
+          <option>Nepali</option>
+          <option>Hindi</option>
+        </select>
+      </label>
+      <button class="reset-btn">Reset All Data</button>
+    </section>
+  </div>
+</body>
+</html>
