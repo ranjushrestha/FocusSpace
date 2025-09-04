@@ -1,0 +1,187 @@
+/* 1. Reset and variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary: #8c7ae6;
+    --secondary: #6c5ce7;
+    --accent: #a29bfe;
+    --bg-color: #f8f8ff;
+    --light: #ffffff;
+    --dark: #2d3436;
+    --gray: #b2bec3;
+    --success: #00b894;
+    --sidebar-width: 250px;
+    --sidebar-collapsed: 60px;
+    --header-height: 70px;
+}
+
+/* 2. Layout: body, sidebar, main content, container */
+body {
+    display: flex;
+    min-height: 100vh; /* full viewport height */
+    margin: 0;
+}
+
+/* Sidebar stretches full height */
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height));
+    background: var(--primary);
+    color: white;
+    padding-top: 10px;
+    transition: width 0.3s;
+    overflow: hidden;
+}
+
+/* Sidebar menu */
+.sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar items */
+.sidebar-menu li {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+/* Make the <a> fill the menu item */
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+    padding: 15px 20px; /* align with toggle button */
+    width: 100%;
+    transition: background 0.3s;
+}
+
+/* Sidebar icons */
+.sidebar-menu li i {
+    min-width: 20px; /* ensures icons align vertically */
+}
+
+/* Hover effect */
+.sidebar-menu li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Active item */
+.sidebar-menu li.active a {
+    background-color: rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+.menu-item.active a {
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+}
+
+
+/* Main content next to sidebar */
+.main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width); /* pushes content aside from sidebar */
+    background-color: var(--bg-color);
+    padding: 20px;
+    min-height: 100vh;
+    transition: margin-left 0.3s;
+}
+
+/* Container inside main content */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 3. Notes styles */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.note {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-height: 120px;
+}
+
+.note h2 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.note p {
+    line-height: 1.4;
+    color: #555;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #6c5ce7;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.note.personal { background-color: #ffe4e1; }
+.note.work { background-color: #d0f4de; }
+.note.ideas { background-color: #fff3b0; }
+.note.pinned { background-color: #ffd6a5; }
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;  
+        width: 100%;
+        padding: 15px;
+    }
+
+    .notes {
+        grid-template-columns: 1fr; 
+    }
+}

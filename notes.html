@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link 
-rel="stylesheet" 
+    rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   >
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="todo list.css">
+  <link rel="stylesheet" href="notes.css">
   <title>FocusSpace</title>
 </head>
 <body>
@@ -27,25 +27,26 @@ rel="stylesheet"
   <!-- Sidebar Toggle Checkbox -->
   <input type="checkbox" id="sidebar-toggle">
 
+  <!-- Sidebar -->
   <aside class="sidebar">
     <label for="sidebar-toggle" class="toggle-btn">
       <i class="fas fa-bars"></i>
     </label>
 
     <ul class="sidebar-menu">
-      <li class="menu-item ">
+      <li class="menu-item">
         <a href="index.html">
           <i class="fas fa-home"></i>
           <span>Dashboard</span>
         </a>
       </li>
-      <li class="menu-item active">
+      <li class="menu-item">
         <a href="todo list.html">
           <i class="fas fa-tasks"></i>
           <span>Todo List</span>
         </a>
       </li>
-      <li class="menu-item">
+      <li class="menu-item active">
         <a href="notes.html">
           <i class="fas fa-sticky-note"></i>
           <span>Notes</span>
@@ -65,35 +66,44 @@ rel="stylesheet"
       </li>
     </ul>
   </aside>
-  
-<!--Todo List-->
-    <main class="container">
-        <h1>Today</h1>
-        <p class="task-count">4 tasks</p>
 
-        <ul class="task-list">
-            <li class="task">
-                <input type="checkbox" id="task1">
-                <label for="task1">Watch tutorial about productivity</label>
-            </li>
-            <li class="task">
-                <input type="checkbox" id="task2">
-                <label for="task2">Set aside 5 minutes to review tasks</label>
-            </li>
-             <li class="task">
-                <input type="checkbox" id="task3">
-                <label for="task3">Complete CSS project</label>
-            </li>
-            <li class="task">
-                <input type="checkbox" id="task4">
-                <label for="task4">Workout for 1hour</label>
-            </li>
-        </ul>
+  <!-- Main Content Wrapper -->
+  <div class="main-content">
+    <div class="container">
+      <h1>My Notes Board</h1>
 
-        <div class="add-task">
-            <input type="text" placeholder="Add a task...">
-            <button>Add</button>
+      <div class="notes">
+        <div class="note pinned personal">
+          <span class="tag">Personal</span>
+          <h2>Shopping List</h2>
+          <p>- Milk<br>- Eggs<br>- Bread<br>- Butter</p>
         </div>
-    </main>
+
+        <div class="note work">
+          <span class="tag">Work</span>
+          <h2>To-Do</h2>
+          <p>- Finish project<br>- Call client<br>- Prepare presentation</p>
+        </div>
+
+        <div class="note ideas">
+          <span class="tag">Ideas</span>
+          <h2>App Idea</h2>
+          <p>- Create a productivity tracker<br>- Use vibrant colors<br>- Mobile friendly</p>
+        </div>
+
+        <div class="note personal">
+          <span class="tag">Personal</span>
+          <h2>Reading List</h2>
+          <p>- "The Alchemist"<br>- "Clean Code"<br>- "Atomic Habits"</p>
+        </div>
+
+        <div class="note work">
+          <span class="tag">Work</span>
+          <h2>Meeting Notes</h2>
+          <p>- Discuss milestones<br>- Assign tasks<br>- Set deadlines</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
